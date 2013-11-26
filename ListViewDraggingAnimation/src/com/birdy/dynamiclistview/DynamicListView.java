@@ -443,17 +443,24 @@ public class DynamicListView extends ListView {
         }
     }
     
-    private void removeCurrentItem() {
-    	int position = getFirstVisiblePosition();
-    	 mCheeseList.remove(getCurrentItem());
-         setAdapter(new StableArrayAdapter(getContext(), R.layout.text_view, mCheeseList));
-         setSelection(position);
-         
-         resetItemIds();
-         mHoverCell = null;
-         mCellIsMobile = false;
-         mIsMobileScrolling = false;
-         mActivePointerId = INVALID_POINTER_ID;
+	private void removeCurrentItem() {
+		int position = getFirstVisiblePosition();
+		mCheeseList.remove(getCurrentItem());
+		setAdapter(new StableArrayAdapter(getContext(), R.layout.text_view,
+				mCheeseList));
+		setSelection(position);
+
+		resetItemIds();
+		mHoverCell = null;
+		mCellIsMobile = false;
+		mIsMobileScrolling = false;
+		mActivePointerId = INVALID_POINTER_ID;
+	}
+    
+    public void insertValue(String item, int index) {
+    	mCheeseList.add(index, item);
+        setAdapter(new StableArrayAdapter(getContext(), R.layout.text_view, mCheeseList));
+        setSelection(index);
     }
 
     /**

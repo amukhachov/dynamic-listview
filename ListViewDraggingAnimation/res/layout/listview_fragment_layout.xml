@@ -29,19 +29,37 @@
 
     <ImageView
         android:id="@+id/delete_topview"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/list_item_height"
-        android:layout_alignTop="@id/listview"
+        style="@style/TopItem"
         android:scaleType="centerInside"
         android:src="@android:drawable/ic_menu_delete"
         android:visibility="gone" />
 
     <Button
-        android:id="@+id/add_item_topview"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/list_item_height"
-        android:layout_alignTop="@id/listview"
+        android:id="@+id/add_mode_topview"
+        style="@style/TopItem"
         android:drawableRight="@android:drawable/ic_menu_add"
         android:text="Add new item" />
+
+    <RelativeLayout
+        android:id="@+id/add_item_container"
+        style="@style/TopItem"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ImageButton
+            android:id="@+id/add_topview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_add" />
+
+        <EditText
+            android:id="@+id/edit_topview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/add_topview"
+            android:hint="New item" />
+    </RelativeLayout>
 
 </RelativeLayout>
