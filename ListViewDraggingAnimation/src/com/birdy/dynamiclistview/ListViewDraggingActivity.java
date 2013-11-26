@@ -16,59 +16,14 @@
 
 package com.birdy.dynamiclistview;
 
-import java.util.ArrayList;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
+import android.support.v4.app.FragmentActivity;
 
-import com.birdy.dynamiclistview.R;
-import com.birdy.dynamiclistview.DynamicListView.OnItemMovedToTopListener;
-
-/**
- * This application creates a listview where the ordering of the data set
- * can be modified in response to user touch events.
- *
- * An item in the listview is selected via a long press event and is then
- * moved around by tracking and following the movement of the user's finger.
- * When the item is released, it animates to its new position within the listview.
- */
-public class ListViewDraggingActivity extends Activity {
+public class ListViewDraggingActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
-
-        ArrayList<String>mCheeseList = new ArrayList<String>();
-        for (int i = 0; i < Cheeses.sCheeseStrings.length; ++i) {
-            mCheeseList.add(Cheeses.sCheeseStrings[i]);
-        }
-
-        StableArrayAdapter adapter = new StableArrayAdapter(this, R.layout.text_view, mCheeseList);
-        DynamicListView listView = (DynamicListView) findViewById(R.id.listview);
-        final View deleteTopView = findViewById(R.id.delete_top_view);
-
-        listView.setCheeseList(mCheeseList);
-        listView.setAdapter(adapter);
-        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        listView.setOnItemMovedToTopListener(new OnItemMovedToTopListener() {
-			@Override
-			public void onActivated() {
-				deleteTopView.setVisibility(View.VISIBLE);
-				deleteTopView.setBackgroundColor(getResources().getColor(R.color.delete_passive_color));
-			}
-			
-			@Override
-			public void onItemMove(String item, boolean isOnTop) {
-				deleteTopView.setBackgroundColor(getResources().getColor(isOnTop ? R.color.delete_active_color : R.color.delete_passive_color));
-			}
-			
-			@Override
-			public void onDeactivated(String item, boolean isOnTop) {
-				deleteTopView.setVisibility(View.GONE);
-			}
-		});
+        setContentView(R.layout.activity_layout);
     }
 }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.birdy.dynamiclistview"
-          android:versionCode="1"
-          android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="11"
-              android:targetSdkVersion="17"/>
-    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher"
-        android:hardwareAccelerated="true">
+          android:versionCode="2"
+          android:versionName="1.0.2">
+    <uses-sdk android:minSdkVersion="8"
+              android:targetSdkVersion="19"/>
+    <application android:label="@string/app_name" 
+        android:icon="@drawable/ic_launcher"
+        android:hardwareAccelerated="true" 
+        android:allowBackup="true">
         <activity android:name="com.birdy.dynamiclistview.ListViewDraggingActivity"
                   android:label="@string/app_name">
             <intent-filter>
