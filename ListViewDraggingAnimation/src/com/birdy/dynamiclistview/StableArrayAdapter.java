@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.listviewdragginganimation;
+package com.birdy.dynamiclistview;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

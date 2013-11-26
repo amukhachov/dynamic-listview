@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-package com.example.android.listviewdragginganimation;
+package com.birdy.dynamiclistview;
 
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
 import com.birdy.dynamiclistview.R;
-import com.example.android.listviewdragginganimation.DynamicListView.OnItemMovedToTopListener;
+import com.birdy.dynamiclistview.DynamicListView.OnItemMovedToTopListener;
 
 /**
  * This application creates a listview where the ordering of the data set
